@@ -31,7 +31,7 @@ jobs:
         id: version
         run: |
           git fetch --tags
-          LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          LAST_TAG=$(git describe --tags --always `git rev-list --tags --max-count=1`)
           if [ -z "$LAST_TAG" ]; then
             LAST_TAG="v0.0.0"
           fi
